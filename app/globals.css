@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --navy: #101827;
+  --navy-deep: #0a111d;
+  --ivory: #f5f1e8;
+  --gold: #c5a46d;
+  --muted: #9aa5b5;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--navy-deep);
+  color: #f8f7f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--gold); color: var(--navy-deep); }
+.container { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+.eyebrow { color: var(--gold); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; font-weight: 700; }
+.gold-text { color: var(--gold); }
+.button-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 48px; padding: 0 22px; background: var(--gold); color: #101827;
+  font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+  transition: transform .2s ease, background .2s ease;
+}
+.button-primary:hover { background: #d8bb87; transform: translateY(-2px); }
+.button-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 48px; padding: 0 22px; border: 1px solid #ffffff35;
+  color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; transition: border-color .2s ease, color .2s ease;
+}
+.button-outline:hover { border-color: var(--gold); color: var(--gold); }
+.site-header { border-bottom: 1px solid #ffffff12; background: #0a111de8; }
+.nav-link { color: #c5cbd4; font-size: 12px; transition: color .2s ease; }
+.nav-link:hover { color: var(--gold); }
+.hero-grid {
+  background-image: linear-gradient(#ffffff08 1px, transparent 1px), linear-gradient(90deg, #ffffff08 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.hero-glow { background: radial-gradient(ellipse at 75% 42%, #c5a46d20, transparent 48%); }
+.service-card { border: 1px solid #ffffff16; background: linear-gradient(145deg, #172235, #101827); transition: transform .25s ease, border-color .25s ease; }
+.service-card:hover { transform: translateY(-5px); border-color: #c5a46d88; }
+.section-line { height: 1px; background: linear-gradient(90deg, var(--gold), transparent); }
+@media (max-width: 640px) {
+  .container { width: min(100% - 36px, 1160px); }
+  .hero-grid { background-size: 42px 42px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
