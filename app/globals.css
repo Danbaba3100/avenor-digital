@@ -76,7 +76,7 @@ a{color:inherit;text-decoration:none}
 .project-card{position:relative;overflow:hidden;min-height:250px;border:1px solid #ffffff2a;border-radius:15px;background:#101722}
 .project-image{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
 .project-card:hover .project-image{transform:scale(1.06)}
-.project-roiv .project-image{background-image:linear-gradient(0deg,#05070be8,transparent 70%),url('https://images.unsplash.com/photo- truck-placeholder')}
+.project-roiv .project-image{background-image:linear-gradient(0deg,#05070be8,transparent 70%),url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=900&q=85')}
 .project-hostel .project-image{background-image:linear-gradient(0deg,#05070be8,transparent 70%),url('https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=85')}
 .project-studypal .project-image{background-image:linear-gradient(0deg,#05070be8,transparent 70%),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=85')}
 .project-caption{position:absolute;inset:auto 0 0;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 14px;background:linear-gradient(0deg,#05070bf2,#05070b88)}
