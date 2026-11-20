@@ -1,0 +1,8 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { PageLayout } from "../components/page-layout";
+import { PageIntro } from "../components/page-intro";
+export const metadata:Metadata={title:"Case Studies",description:"Read about the challenges, thinking and solutions behind selected AVENOR Digital projects."};
+const studies=[{slug:"roiv-freight-coordination",name:"Roiv Freight Coordination",type:"Client website · Web design and SEO",desc:"A freight coordination website redesign focused on service clarity, user experience and a search-ready technical foundation."},{slug:"hostel-hub",name:"Hostel Hub",type:"Product project · Web platform",desc:"A student accommodation discovery concept with video-led listings, inspection requests and agent management workflows."},{slug:"studypal",name:"StudyPal",type:"Academic project · Learning platform",desc:"A student collaboration concept built around course-based discovery, study connections and shared learning resources."}];
+export default function CaseStudiesPage(){return <PageLayout><PageIntro eyebrow="How we think" title="The thinking behind" accent="the work." description="Project overviews that explain the context, decisions and capabilities involved. We publish measurable outcomes only when they have been verified."/><section className="content-section"><div className="container article-grid">{studies.map(s=><article className="detail-card" key={s.slug}><span className="eyebrow">{s.type}</span><h2>{s.name}</h2><p>{s.desc}</p><Link className="text-link" href={`/case-studies/${s.slug}`}>Read overview <ArrowUpRight size={15}/></Link></article>)}</div></section></PageLayout>}

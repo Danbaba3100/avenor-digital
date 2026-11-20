@@ -5,11 +5,11 @@ import {
 } from "lucide-react";
 
 const services = [
-  { title: "AVENOR Web", description: "Website design, development, e-commerce and web applications.", icon: Code2 },
-  { title: "AVENOR Technologies", description: "Custom software, web applications and enterprise systems.", icon: Layers3 },
-  { title: "AVENOR Growth", description: "SEO, digital marketing and search visibility.", icon: Search },
-  { title: "AVENOR Consulting", description: "Technology consulting and digital strategy.", icon: Compass },
-  { title: "AVENOR Partnerships", description: "Long-term development, maintenance and technology support.", icon: Handshake },
+  { slug: "web-development", title: "AVENOR Web", description: "Website design, development, e-commerce and web applications.", icon: Code2 },
+  { slug: "custom-software-development", title: "AVENOR Technologies", description: "Custom software, web applications and enterprise systems.", icon: Layers3 },
+  { slug: "seo", title: "AVENOR Growth", description: "SEO, digital marketing and search visibility.", icon: Search },
+  { slug: "technology-consulting", title: "AVENOR Consulting", description: "Technology consulting and digital strategy.", icon: Compass },
+  { slug: "software-partnerships", title: "AVENOR Partnerships", description: "Long-term development, maintenance and technology support.", icon: Handshake },
 ];
 
 const projects = [
@@ -67,18 +67,19 @@ export default function HomePage() {
         <div className="container header-inner">
           <BrandMark />
           <nav className="desktop-nav" aria-label="Main navigation">
-            <Link href="#about">About</Link>
-            <Link href="#services">Services</Link>
-            <Link href="#work">Projects</Link>
-            <Link href="#locations">Locations</Link>
+            <Link href="/about">About</Link>
+            <Link href="/services">Services</Link>
+            <Link href="/projects">Projects</Link>
+            <Link href="/blog">Blog</Link>
+            <Link href="/locations">Locations</Link>
           </nav>
-          <Link href="#contact" className="button button-gold header-cta">Get a quote <ArrowUpRight size={15} /></Link>
+          <Link href="/contact" className="button button-gold header-cta">Get a quote <ArrowUpRight size={15} /></Link>
           <details className="mobile-menu">
             <summary aria-label="Open navigation"><Menu size={23} /></summary>
             <nav aria-label="Mobile navigation">
-              <Link href="#about">About</Link><Link href="#services">Services</Link>
-              <Link href="#work">Projects</Link><Link href="#locations">Locations</Link>
-              <Link href="#contact">Contact</Link>
+              <Link href="/about">About</Link><Link href="/services">Services</Link>
+              <Link href="/projects">Projects</Link><Link href="/blog">Blog</Link><Link href="/locations">Locations</Link>
+              <Link href="/contact">Contact</Link>
             </nav>
           </details>
         </div>
@@ -109,11 +110,11 @@ export default function HomePage() {
             <div className="heading-aside"><p>From stunning websites to powerful software and strategic SEO, we deliver solutions that drive real results.</p><Link href="#contact" className="text-link">Discuss your needs <ArrowRight size={15} /></Link></div>
           </div>
           <div className="service-grid">
-            {services.map(({ title, description, icon: Icon }) => (
+            {services.map(({ slug, title, description, icon: Icon }) => (
               <article className="service-card" key={title}>
                 <Icon size={31} strokeWidth={1.8} />
                 <h3>{title}</h3><p>{description}</p>
-                <Link href="#contact">Learn more <ArrowRight size={14} /></Link>
+                <Link href={`/services/${slug}`}>Learn more <ArrowRight size={14} /></Link>
               </article>
             ))}
           </div>
@@ -126,7 +127,7 @@ export default function HomePage() {
           <p className="eyebrow"><span /> About us</p>
           <h2>Building Digital Excellence<br />for a Smarter Tomorrow.</h2>
           <p>AVENOR Digital is a digital solutions and technology agency helping businesses of all sizes build a stronger online presence, streamline operations and pursue sustainable growth through technology.</p>
-          <Link href="#contact" className="button button-gold">Learn more about us <ArrowRight size={15} /></Link>
+          <Link href="/about" className="button button-gold">Learn more about us <ArrowRight size={15} /></Link>
         </div>
         <div className="values-grid">
           <div><Rocket /><span>Innovative<br />solutions</span></div>
@@ -191,7 +192,7 @@ export default function HomePage() {
 
       <footer className="site-footer">
         <div className="container">
-          <div className="footer-main"><BrandMark /><nav aria-label="Footer navigation"><Link href="#about">About</Link><Link href="#services">Services</Link><Link href="#work">Projects</Link><Link href="#locations">Locations</Link><Link href="#contact">Contact</Link></nav><a href="mailto:hello@avenordigital.com" className="footer-contact">Let's talk <ArrowUpRight size={14} /></a></div>
+          <div className="footer-main"><BrandMark /><nav aria-label="Footer navigation"><Link href="/about">About</Link><Link href="/services">Services</Link><Link href="/projects">Projects</Link><Link href="/blog">Blog</Link><Link href="/locations">Locations</Link><Link href="/contact">Contact</Link></nav><a href="mailto:hello@avenordigital.com" className="footer-contact">Let's talk <ArrowUpRight size={14} /></a></div>
           <div className="footer-bottom"><span>© {new Date().getFullYear()} AVENOR Digital. All rights reserved.</span><span>Technology That Moves Business Forward.</span></div>
         </div>
       </footer>
